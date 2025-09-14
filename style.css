@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+#instructions {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  color: #fff;
+  background: rgba(20,20,20,0.7);
+  padding: 2em 0;
+  border-radius: 10px;
+  pointer-events: none;
+  user-select: none;
+}
+canvas {
+  display: block;
+}
