@@ -1,4 +1,6 @@
-// Three.js FPS Demo - Minimal Starter
+import * as THREE from 'https://unpkg.com/three@0.154.0/build/three.module.js';
+import { PointerLockControls } from 'https://unpkg.com/three@0.154.0/examples/jsm/controls/PointerLockControls.js';
+
 let camera, scene, renderer, controls;
 let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
 let velocity = new THREE.Vector3();
@@ -43,7 +45,7 @@ function init() {
   document.body.appendChild(renderer.domElement);
 
   // Pointer Lock Controls
-  controls = new THREE.PointerLockControls(camera, renderer.domElement);
+  controls = new PointerLockControls(camera, renderer.domElement);
   camera.position.y = 2;
 
   document.getElementById('instructions').addEventListener('click', function () {
@@ -124,7 +126,7 @@ function animate() {
 
   if (controls.isLocked === true) {
     // Simple movement
-    let delta = 0.08; // Fixed time step for simplicity
+    let delta = 0.08;
     velocity.x -= velocity.x * 10.0 * delta;
     velocity.z -= velocity.z * 10.0 * delta;
     velocity.y -= 9.8 * 5.0 * delta; // gravity
